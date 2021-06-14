@@ -13,6 +13,8 @@ SenStick の動作を確認するための最も簡単なブラウザアプリ�
 
 SenStick からセンサデータを取得するサンプルアプリケーション。
 
+[senstick_app_sensorを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_sensor.html)
+
 ## senstick_app_mrubyc
 
 SenStick でmruby/cのプログラムを実行するためのアプリケーション。

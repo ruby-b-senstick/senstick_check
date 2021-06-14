@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SenStick Sensor webapp</title>
+  <script type="text/javascript" src="bluejelly.js"></script>
+  <script type="text/javascript" src="senstick_app_sensor.js"></script>
+</head>
+
+<body onload=page_load()>
+  <h1>SenStick Sensor webapp</h1>
+  webアプリケーション（JavaScript）でSenStickからセンサデータを取得する方法を説明します。
+  <hr>
+  
+  <div id="device_name">no name</div>
+  <div id="device_status">Disconnected</div>
+  <input type="button" value="scan & connect" onClick="scan_onclick()">
+  <input type="button" value="disconnect" onClick="disconnect_onclick()">
+
+  <hr>
+
+  センサデータは、「温湿度、照度などのグループ」と「加速度、角加速度などのグループの」2つに分けて取得します。
+
+  <br>
+  <input type="button" value="Get Sensor Data 1" onClick="getsensor1_onclick()">
+  
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3">SenStick Sensor Values</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>温度</td>
+        <td align="right"><span id="sensor_value_temperature_text"></span></td>
+        <td>℃</td>
+      </tr>
+      <tr>
+        <td>湿度</td>
+        <td align="right"><span id="sensor_value_humidity_text"></span></td>
+        <td>％</td>
+      </tr>
+      <tr>
+        <td>照度</td>
+        <td align="right"><span id="sensor_value_brightness_text"></span></td>
+        <td>lx</td>
+      </tr>
+      <tr>
+        <td>UV強度</td>
+        <td align="right"><span id="sensor_value_uv_text"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>気圧</td>
+        <td align="right"><span id="sensor_value_airpressure_text"></span></td>
+        <td>hPa</td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+</body>
+
+
