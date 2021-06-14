@@ -4,7 +4,8 @@
 
 SenStick の動作を確認するための最も簡単なブラウザアプリ。SenStickアプリを開発する際の参考にもなる。
 
-[senstick_app_sampleを実行する](https://senstick-app.herokuapp.com/){:target="_blank"}
+- 旧Heroku版
+  [senstick_app_sampleを実行する](https://senstick-app.herokuapp.com/){:target="_blank"}
 
 
 ## senstick_app_sensor
