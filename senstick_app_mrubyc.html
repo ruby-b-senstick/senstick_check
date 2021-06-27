@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SenStick Sample webapp</title>
+  <script type="text/javascript" src="bluejelly.js"></script>
+  <script type="text/javascript" src="senstick_app_mrubyc.js"></script>
+</head>
+
+<body onload=page_load()>
+  <h1>SenStick Sample</h1>
+  SenStickにmruby/cのバイトコードを転送するサンプルアプリケーションです。<br>
+  <a href="https://webbluetoothcg.github.io/web-bluetooth/">Web Bluetooth</a>を使います。この機能に対応したブラウザが必要になります。
+
+  <hr>
+  
+  <div id="device_name">no name</div>
+  <div id="device_status">Disconnected</div>
+  <input type="button" value="scan & connect" onClick="scan_onclick()">
+  <input type="button" value="disconnect" onClick="disconnect_onclick()">
+
+  <hr>
+  
+
+  バイトコード: <span id="mrb_files_text">no name</span>(<span id="transfer_progress">0 %</span>)<br>
+  <input id="transfer_button" type="button" value="Transfer" onClick="transfer_onclick()">
+  
+  <div id="drop_area" style="background-color:#afcfff;border:solid 1px #3470ff; width:450px; height:150px;">Drop your bytecode(s) here.<br>Bytecode is 'filename.mrb'.</div>
+
+  
+</body>
+
+
