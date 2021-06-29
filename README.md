@@ -27,6 +27,7 @@ SenStick でmruby/cのプログラムを実行するためのアプリケーシ�
 
 SenStick の応用アプリケーション例。センサデータをグラフで描画する。
 
+[senstick_app_viewを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_view.html)
 
 
 
