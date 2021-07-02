@@ -23,6 +23,12 @@ SenStick でmruby/cのプログラムを実行するためのアプリケーシ�
 
 [senstick_app_mrubycを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_mrubyc.html)
 
+|サンプルプログラム(バイトコード）|説明|
+|---|---|
+|[led.mrb](https://ruby-b-senstick.github.io/senstick_check/mrubyc_sample/led.mrb)|LEDが点滅する|
+|[sensor.mrb](https://ruby-b-senstick.github.io/senstick_check/mrubyc_sample/sensor.mrb)|温度センサを使う。温度が30℃を超えるとLEDが点灯する|
+|[trigger.mrb](https://ruby-b-senstick.github.io/senstick_check/mrubyc_sample/trigger.mrb)|光センサを使う。*明るさが変化すると*LEDが点灯する|
+
 ## senstick_app_view
 
 SenStick の応用アプリケーション例。センサデータをグラフで描画する。
