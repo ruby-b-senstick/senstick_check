@@ -1,4 +1,10 @@
 
+<style>
+img {
+    border: 1px black solid;
+}
+</style>
+
 # SenStickの接続と動作確認
 
 SenStick本体へのアクセスは、BLE（Bluetooth Low Energy）を使います。ブラウザを使って、BLEでアクセスするためのアプリケーションにより、SenStickを簡単に操作できます。
