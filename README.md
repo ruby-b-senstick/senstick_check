@@ -1,3 +1,10 @@
+# SenStickチュートリアル
+
+以下のSenStickチュートリアルを順に進めることで、SenStickの使い方を習得できます。
+
+- [SenStickの接続と動作確認](./tutorial/tutorial-1.md)
+
+
 # SenStick サンプルアプリケーション
 
 ## senstick_app_sample
