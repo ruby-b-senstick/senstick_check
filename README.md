@@ -1,13 +1,15 @@
-# SenStickチュートリアル
+# SenStick4
+
+## SenStickチュートリアル
 
 以下のSenStickチュートリアルを順に進めることで、SenStickの使い方を習得できます。
 
 - [SenStickの接続と動作確認](./tutorial/tutorial-1.md)
 
 
-# SenStick サンプルアプリケーション
+## SenStick サンプルアプリケーション
 
-## senstick_app_sample
+### senstick_app_sample
 
 SenStick の動作を確認するための最も簡単なブラウザアプリ。
 SenStickアプリを開発する際の参考にもなります。
@@ -18,13 +20,13 @@ SenStickアプリを開発する際の参考にもなります。
 （旧Heroku版）[senstick_app_sampleを実行する](https://senstick-app.herokuapp.com/)
 
 
-## senstick_app_sensor
+### senstick_app_sensor
 
 SenStick からセンサデータを取得するサンプルアプリケーション。
 
 [senstick_app_sensorを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_sensor.html)
 
-## senstick_app_mrubyc
+### senstick_app_mrubyc
 
 SenStick でmruby/cのプログラムを実行するためのアプリケーション。
 
@@ -36,7 +38,7 @@ SenStick でmruby/cのプログラムを実行するためのアプリケーシ�
 |[sensor.mrb](https://ruby-b-senstick.github.io/senstick_check/mrubyc_sample/sensor.mrb)|温度センサを使う。温度が30℃を超えるとLEDが点灯する|
 |[trigger.mrb](https://ruby-b-senstick.github.io/senstick_check/mrubyc_sample/trigger.mrb)|光センサを使う。明るさが変化するとLEDが点灯する|
 
-## senstick_app_view
+### senstick_app_view
 
 SenStick の応用アプリケーション例。センサデータをグラフで描画する。
 
