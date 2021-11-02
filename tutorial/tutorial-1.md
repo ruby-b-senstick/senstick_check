@@ -1,4 +1,8 @@
-
+<style>
+img {
+    border: 3px black solid;
+}
+</style>
 
 # SenStickの接続と動作確認
 
@@ -12,8 +16,7 @@ SenStick本体へのアクセスは、BLE（Bluetooth Low Energy）を使いま�
 
 - [senstick_app_sampleを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_sample.html)
 
-|![アプリケーション起動](./images/fig01-01.png)|
-|:-:|
+![アプリケーション起動](./images/fig01-01.png)
 
 ## 手順２．SenStickの電源を入れる
 
