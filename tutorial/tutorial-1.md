@@ -26,29 +26,35 @@ SenStickにUSBで電源を供給するか、または、バッテリを接続し
 
 ブラウザで、「Scan&Connect」ボタンをクリックします。
 
-![アプリケーション起動](./images/fig01-02.png)
+![SenStickと接続する](./images/fig01-02.png)
 
 周囲のBLEデバイスの一覧が表示されるので、「SenStick4」を選択して、「ペア設定」ボタンをクリックします。
 
 ここで「SenStick4」が表示されない場合は、一度SenStcikの電源を落として、電源を入れなおしてみてください。
 
-![アプリケーション起動](./images/fig01-03.png)
+![SenStickと接続する](./images/fig01-03.png)
 
-ブラウザで、「SenStick4」「Connected」を表示されれば、正しく接続されています。
+ブラウザで、「SenStick4」「Connected」と表示されれば、正しく接続されています。
 
-![アプリケーション起動](./images/fig01-04.png)
+![SenStickと接続する](./images/fig01-04.png)
 
 ## 手順４．SenStickとの通信確認（１）
 
 「Get Version」をクリックすると、SenStickのバージョンが「SenStick#20210225」のように表示されます。
 
-![アプリケーション起動](./images/fig01-05.png)
+![Get Version](./images/fig01-05.png)
 
 
 
 ## 手順５．SenStickとの通信確認（２）
 
 「LED on」「LED off」をクリックすることで、SenStick上の赤色LEDの点灯・消灯を制御できます。
+
+
+## 手順５．SenStickとの接続解除
+
+ブラウザで「disconnect」ボタンをクリックすると、SenStickとの接続が解除されます。
+
 
 ## まとめ
 

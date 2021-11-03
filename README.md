@@ -4,7 +4,8 @@
 
 以下のSenStickチュートリアルを順に進めることで、SenStickの使い方を習得できます。
 
-- [SenStickの接続と動作確認](./tutorial/tutorial-1.md)
+- [1. SenStickの接続と動作確認](./tutorial/tutorial-1.md)
+- [2. SenStickのセンサデータ取得](./tutorial/tutorial-2.md)
 
 
 ## SenStick サンプルアプリケーション
