@@ -4,7 +4,10 @@
 
 以下のSenStickチュートリアルを順に進めることで、SenStickの使い方を習得できます。
 
-- [SenStickの接続と動作確認](./tutorial/tutorial-1.md)
+- [1. SenStickの接続と動作確認](./tutorial/tutorial-1.md)
+- [2. SenStickのセンサデータ取得](./tutorial/tutorial-2.md)
+- [3. mruby/cのプログラムの実行](./tutorial/tutorial-3.md)
+- [4. mruby/cプログラムの作成](./tutorial/tutorial-4.md)
 
 
 ## SenStick サンプルアプリケーション

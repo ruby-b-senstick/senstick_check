@@ -1,3 +1,8 @@
+<style>
+img {
+    border: 3px black solid;
+}
+</style>
 
 # SenStickの接続と動作確認
 
@@ -11,6 +16,8 @@ SenStick本体へのアクセスは、BLE（Bluetooth Low Energy）を使いま�
 
 - [senstick_app_sampleを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_sample.html)
 
+![アプリケーション起動](./images/fig01-01.png)
+
 ## 手順２．SenStickの電源を入れる
 
 SenStickにUSBで電源を供給するか、または、バッテリを接続して、SenStickの電源を入れます。電源投入時に、赤色LEDが約2秒間点灯します。
@@ -19,26 +26,35 @@ SenStickにUSBで電源を供給するか、または、バッテリを接続し
 
 ブラウザで、「Scan&Connect」ボタンをクリックします。
 
-（画像）
+![SenStickと接続する](./images/fig01-02.png)
 
 周囲のBLEデバイスの一覧が表示されるので、「SenStick4」を選択して、「ペア設定」ボタンをクリックします。
 
 ここで「SenStick4」が表示されない場合は、一度SenStcikの電源を落として、電源を入れなおしてみてください。
 
-（画像）
+![SenStickと接続する](./images/fig01-03.png)
 
-ブラウザで、「SenStick4」「Connected」を表示されれば、正しく接続されています。
+ブラウザで、「SenStick4」「Connected」と表示されれば、正しく接続されています。
+
+![SenStickと接続する](./images/fig01-04.png)
 
 ## 手順４．SenStickとの通信確認（１）
 
 「Get Version」をクリックすると、SenStickのバージョンが「SenStick#20210225」のように表示されます。
 
-（画像）
+![Get Version](./images/fig01-05.png)
+
 
 
 ## 手順５．SenStickとの通信確認（２）
 
 「LED on」「LED off」をクリックすることで、SenStick上の赤色LEDの点灯・消灯を制御できます。
+
+
+## 手順５．SenStickとの接続解除
+
+ブラウザで「disconnect」ボタンをクリックすると、SenStickとの接続が解除されます。
+
 
 ## まとめ
 
