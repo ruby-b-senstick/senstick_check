@@ -30,6 +30,7 @@ ble.onScan = (deviceName) => {
 // 接続がされると、onConnectGATT が呼ばれる
 const scan_onclick = () => {
     ble.scan('mrubyc').then( () => {
+	document.getElementById('version_text').innerHTML = ""
         return ble.connectGATT('mrubyc')
     }).catch( error => {
         console.log('error in scan')
