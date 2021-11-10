@@ -1,8 +1,8 @@
 # SenStick4
 
-## SenStickチュートリアル
+## SenStick4チュートリアル
 
-以下のSenStickチュートリアルを順に進めることで、SenStickの使い方を習得できます。
+以下のSenStick4チュートリアルを順に進めることで、SenStick4の使い方を習得できます。
 
 - [1. SenStickの接続と動作確認](./tutorial/tutorial-1.md)
 - [2. SenStickのセンサデータ取得](./tutorial/tutorial-2.md)
@@ -10,12 +10,12 @@
 - [4. mruby/cプログラムの作成](./tutorial/tutorial-4.md)
 
 
-## SenStick サンプルアプリケーション
+## SenStick4 サンプルアプリケーション
 
 ### senstick_app_sample
 
-SenStick の動作を確認するための最も簡単なブラウザアプリ。
-SenStickアプリを開発する際の参考にもなります。
+SenStick4 の動作を確認するための最も簡単なブラウザアプリ。
+SenStick4アプリを開発する際の参考にもなります。
 
 [senstick_app_sampleを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_sample.html)
 
@@ -25,13 +25,13 @@ SenStickアプリを開発する際の参考にもなります。
 
 ### senstick_app_sensor
 
-SenStick からセンサデータを取得するサンプルアプリケーション。
+SenStick4 からセンサデータを取得するサンプルアプリケーション。
 
 [senstick_app_sensorを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_sensor.html)
 
 ### senstick_app_mrubyc
 
-SenStick でmruby/cのプログラムを実行するためのアプリケーション。
+SenStick4 でmruby/cのプログラムを実行するためのアプリケーション。
 
 [senstick_app_mrubycを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_mrubyc.html)
 
@@ -43,7 +43,7 @@ SenStick でmruby/cのプログラムを実行するためのアプリケーシ�
 
 ### senstick_app_view
 
-SenStick の応用アプリケーション例。センサデータをグラフで描画する。
+SenStick4 の応用アプリケーション例。センサデータをグラフで描画する。
 
 [senstick_app_viewを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_view.html)
 
