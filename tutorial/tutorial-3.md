@@ -30,7 +30,7 @@ SenStickには、mruby/cを実行するためのVM（プログラムを実行す
 
 以下の URL クリックして、senstick_app_mrubyc アプリケーションを起動します。
 
-- [senstick_app_mrubycを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_sensor.html)
+- [senstick_app_mrubycを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_mrubyc.html)
 
 ![アプリケーション起動](./images/fig03-02.png)
 
