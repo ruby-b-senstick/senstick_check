@@ -156,15 +156,18 @@ ble.onRead = (data,deviceName) => {
 const transfer_onclick = () => {
     var reader = new FileReader()
     if( mrb_files.length == 1 ){
-	// 単一バイトコード
-	// 転送バイト列は mrbファイルそのまま
-	reader.onload = () => {
-	    transfer_data.bytecode = reader.result
-	    transfer_data.seq = 0
-	    transfer_data.end_seq = (reader.result.byteLength+15) / 16 | 0
-	    // onWriteイベント発生
-	    ble.write("mrubyc", [0x00])
+		// 単一バイトコード
+		// 転送バイト列は mrbファイルそのまま
+		reader.onload = () => {
+	    	transfer_data.bytecode = reader.result
+	    	transfer_data.seq = 0
+	    	transfer_data.end_seq = (reader.result.byteLength+15) / 16 | 0
+	    	// onWriteイベント発生
+	    	ble.write("mrubyc", [0x00])
+		}
+		reader.readAsArrayBuffer(mrb_files[0])
+    } else {
+		// 複数バイトコード
+		//　転送バイト列は、ヘッダが付加される
 	}
-	reader.readAsArrayBuffer(mrb_files[0])
-    }
 }
