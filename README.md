@@ -12,6 +12,7 @@
 - [2. SenStick4のセンサデータ取得](./tutorial/tutorial-2.md)
 - [3. mruby/cのプログラムの実行](./tutorial/tutorial-3.md)
 - [4. mruby/cプログラムの作成](./tutorial/tutorial-4.md)
+- [5. mruby/cプログラムとの連携](./tutorial/tutorial-5.md)
 
 
 ## SenStick4 サンプルアプリケーション
@@ -53,6 +54,16 @@ SenStick4 の応用アプリケーション例。
 [senstick_app_viewを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_view.html)
 
 [senstick_app_view2を実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_view2.html)
+
+### senstick_app_variable
+
+SenStick4 の mruby/c プログラムと連携させる例。
+SenStick4 内の mruby/c プログラムの変数にBLE経由でアクセスする。
+
+このプログラムを実行させるためには、サンプルバイトコード [variable.mrb](https://ruby-b-senstick.github.io/senstick_check/mrubyc_sample/variable.mrb)) をSenStick4で実行させてください。
+
+[senstick_app_variableを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_variable.html)
+
 
 ## お問い合わせ先
 
