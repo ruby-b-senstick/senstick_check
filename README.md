@@ -1,21 +1,26 @@
 # SenStick4
 
-## SenStickチュートリアル
+## SenStick4取扱説明書
 
-以下のSenStickチュートリアルを順に進めることで、SenStickの使い方を習得できます。
+[SenStick4取扱説明書](./docs/SenStick4%20%20取扱説明書.pdf)
 
-- [1. SenStickの接続と動作確認](./tutorial/tutorial-1.md)
-- [2. SenStickのセンサデータ取得](./tutorial/tutorial-2.md)
+## SenStick4チュートリアル
+
+以下のSenStick4チュートリアルを順に進めることで、SenStick4の使い方を習得できます。
+
+- [1. SenStick4の接続と動作確認](./tutorial/tutorial-1.md)
+- [2. SenStick4のセンサデータ取得](./tutorial/tutorial-2.md)
 - [3. mruby/cのプログラムの実行](./tutorial/tutorial-3.md)
 - [4. mruby/cプログラムの作成](./tutorial/tutorial-4.md)
+- [5. mruby/cプログラムとの連携](./tutorial/tutorial-5.md)
 
 
-## SenStick サンプルアプリケーション
+## SenStick4 サンプルアプリケーション
 
 ### senstick_app_sample
 
-SenStick の動作を確認するための最も簡単なブラウザアプリ。
-SenStickアプリを開発する際の参考にもなります。
+SenStick4 の動作を確認するための最も簡単なブラウザアプリ。  
+SenStick4アプリを開発する際の参考にもなります。
 
 [senstick_app_sampleを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_sample.html)
 
@@ -25,13 +30,13 @@ SenStickアプリを開発する際の参考にもなります。
 
 ### senstick_app_sensor
 
-SenStick からセンサデータを取得するサンプルアプリケーション。
+SenStick4 からセンサデータを取得するサンプルアプリケーション。
 
 [senstick_app_sensorを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_sensor.html)
 
 ### senstick_app_mrubyc
 
-SenStick でmruby/cのプログラムを実行するためのアプリケーション。
+SenStick4 でmruby/cのプログラムを実行するためのアプリケーション。
 
 [senstick_app_mrubycを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_mrubyc.html)
 
@@ -43,9 +48,48 @@ SenStick でmruby/cのプログラムを実行するためのアプリケーシ�
 
 ### senstick_app_view
 
-SenStick の応用アプリケーション例。センサデータをグラフで描画する。
+SenStick4 の応用アプリケーション例。  
+センサデータをグラフで描画する。  
 
 [senstick_app_viewを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_view.html)
 
 [senstick_app_view2を実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_view2.html)
 
+### senstick_app_variable
+
+SenStick4 の mruby/c プログラムと連携させる例。
+SenStick4 内の mruby/c プログラムの変数にBLE経由でアクセスする。
+
+このプログラムを実行させるためには、サンプルバイトコード [variable.mrb](https://ruby-b-senstick.github.io/senstick_check/mrubyc_sample/variable.mrb)) をSenStick4で実行させてください。
+
+[senstick_app_variableを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_variable.html)
+
+
+## お問い合わせ先
+
+[Rubyビジネス推進協議会HP「SenStick4+mruby/c教育キット」](http://senstick.ruby-b.com/)  
+`「お申込み・お問い合わせ」`からお願いします。
+
+### よくある質問
+
+<details>
+<summary style="font-weight: bolder;">BLEが接続できません。</summary>
+<p>
+他の接続機器がある場合に接続できなくなる場合があります。<br>  
+一度、他の接続機器を切った状態でBluetoothの設定をOFF/ONした後に再度実行してください。  
+</p>
+</details>
+<details>
+<summary style="font-weight: bolder;">充電が終わりません</summary>
+<p>
+電源をOFFにして充電をしてください。<br>
+それでも完了しない場合は、バッテリーの劣化が考えられます。<br>
+新しいバッテリーの購入を検討してください。 
+</p>
+</details>
+
+## 参考
+
+### ケース３Dデータ
+
+[basic_case_for_senstick4.stl](./docs/basic_case_for_senstick4.stl)

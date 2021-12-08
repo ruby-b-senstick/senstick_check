@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SenStick Sample webapp</title>
+  <script type="text/javascript" src="bluejelly.js"></script>
+  <script type="text/javascript" src="senstick_app_sample.js"></script>
+</head>
+
+<body onload=page_load()>
+  <h1>SenStick Sample webapp</h1>
+  webアプリケーション（JavaScript）でSenStickにアクセスする方法を説明します。</br>
+  <a href="https://webbluetoothcg.github.io/web-bluetooth/">Web Bluetooth</a>を使います。この機能に対応したブラウザが必要になります。
+
+  <hr>
+  
+  <div id="device_name">no name</div>
+  <div id="device_status">Disconnected</div>
+  <input type="button" value="scan & connect" onClick="scan_onclick()">
+  <input type="button" value="disconnect" onClick="disconnect_onclick()">
+
+  <hr>
+
+  <input type="button" value="Get Version" onClick="version_onclick()">
+  <span id="version_text"></span>
+  <br>
+
+  <input type="button" value="LED off" onClick="led_off_onclick()">
+  <input type="button" value="LED on" onClick="led_on_onclick()">
+
+</body>
+
+

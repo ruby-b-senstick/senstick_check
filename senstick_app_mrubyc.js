@@ -170,4 +170,51 @@ const transfer_onclick = () => {
 		// 複数バイトコード
 		//　転送バイト列は、ヘッダが付加される
 	}
+	reader.readAsArrayBuffer(mrb_files[0])
+    } else {
+		var seq = 0
+		var bytecode_length = 0
+		var bytecodes = []
+		// 複数バイトコードの場合
+		reader.onload = () => {
+			bytecode_length += reader.result.byteLength
+			bytecodes.push(reader.result)
+			seq++
+			if( seq < mrb_files.length ){
+			// 次のファイルを読み込み開始する
+			reader.readAsArrayBuffer(mrb_files[seq])
+			} else {
+			// 最後のファイルを読み終わった
+			// 転送するデータ長＝バイトコード(bytecode_length)＋ヘッダ情報(8)
+			var buffer = new ArrayBuffer(bytecode_length + 8)
+			var dst = new Uint8Array(buffer)
+			// ヘッダ情報を初期化
+			var offset = 8
+			for( i=0 ; i<4 ; i++ ){
+				if( i >= mrb_files.length ){
+				dst[i*2]   = 0
+				dst[i*2+1] = 0
+				continue
+				}
+				// ヘッダ情報
+				dst[i*2]   = bytecodes[i].byteLength % 256
+				dst[i*2+1] = bytecodes[i].byteLength / 256 | 0
+				// バイトコードをコピーする
+				var src = new Uint8Array(bytecodes[i])
+				for( j=0 ; j<src.length ; j++ ){
+				dst[offset+j] = src[j]
+				}
+				offset += bytecodes[i].byteLength
+			}
+			transfer_data.bytecode = buffer
+			transfer_data.seq = 0
+			transfer_data.end_seq = (buffer.byteLength+15) / 16 | 0
+			// onWriteイベント発生
+			ble.write("mrubyc", [0x00])
+			}
+		}
+		// 最初のファイルを読み込み開始する
+		reader.readAsArrayBuffer(mrb_files[seq])
+	
+	}
 }
