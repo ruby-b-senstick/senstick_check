@@ -60,7 +60,7 @@ SenStick4 の応用アプリケーション例。
 SenStick4 の mruby/c プログラムと連携させる例。
 SenStick4 内の mruby/c プログラムの変数にBLE経由でアクセスする。
 
-このプログラムを実行させるためには、サンプルバイトコード [variable.mrb](https://ruby-b-senstick.github.io/senstick_check/mrubyc_sample/variable.mrb)) をSenStick4で実行させてください。
+このプログラムを実行させるためには、サンプルバイトコード [variable.mrb](https://ruby-b-senstick.github.io/senstick_check/mrubyc_sample/variable.mrb) をSenStick4で実行させてください。
 
 [senstick_app_variableを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_variable.html)
 
