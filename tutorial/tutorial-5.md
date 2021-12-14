@@ -41,9 +41,27 @@ mrbc.exe variable.rb
 
 ## 手順４．ブラウザから変数を参照
 
-ブラウザで、「」に「`ondo`」
+ブラウザで、「Variable Name:」に「`ondo`」と入力し、「Read from SenStick ->」ボタンをクリックします。
 
+![変数の参照](./images/fig05-01.png)
 
+SenStick内のmruby/cプログラムで計測した温度がブラウザに表示されます。
 
+## プログラムの説明
+
+SenStickでは、以下のプログラムが実行されます。
+
+```Ruby
+sensor = SenStickIF.new([:temperature])
+
+while true do
+  $ondo = sensor.get(:temperature)
+  sleep 0.5
+end
+```
+
+プログラム中の `sensor.get(:temperature)` で温度データを取得します。その値を、変数`$ondo` に代入しています。
+
+SenStcikでは、mruby/cプログラムで使われる先頭が`$`で始まる変数をブラウザから参照できるようになっています。よって、計測した温度データがブラウザからアクセスできるようになります。
 
 
