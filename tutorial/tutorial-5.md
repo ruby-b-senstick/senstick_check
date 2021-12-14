@@ -20,12 +20,7 @@ SenStick4では、mruby/cプログラムのグローバル変数（変数名の�
 sensor = SenStickIF.new([:temperature])
 
 while true do
-  t = sensor.get(:temperature)
-  if t>30 then
-    led 1
-  else
-    led 0
-  end
+  $ondo = sensor.get(:temperature)
   sleep 0.5
 end
 ```
@@ -35,7 +30,7 @@ end
 以下のコマンドを入力することで、`variable.rb` をコンパイルします。
 
 ```
-mrbc.exe led.rb
+mrbc.exe variable.rb
 ```
 
 コマンドを実行すると、バイトコード`variable.mrb`が生成されます。

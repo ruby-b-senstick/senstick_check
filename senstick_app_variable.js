@@ -30,7 +30,6 @@ ble.onScan = (deviceName) => {
 // 接続がされると、onConnectGATT が呼ばれる
 const scan_onclick = () => {
     ble.scan('mrubyc').then( () => {
-	document.getElementById('version_text').innerHTML = ""
         return ble.connectGATT('mrubyc')
     }).catch( error => {
         console.log('error in scan')
@@ -55,43 +54,110 @@ ble.onDisconnect = (deviceName) => {
     document.getElementById('device_status').innerHTML = 'Disconnected'
 }
 
+// SenStickからの返り値を値に変換する
+const convert_from_senstick_value = (buffer) => {
+    var src = new Uint8Array(buffer)
+    var conv = new ArrayBuffer(8)
+    var dst_uint8 = new Uint8Array(conv)
+    for( i=0 ; i<8 ; i++ ) dst_uint8[i] = src[i+1]
+    switch(src[0]){
+    case 0:
+    	return 'null'
+	break;
+    case 1:
+	    var dst_int32 = new Int32Array(conv)
+	    return dst_int32[0]
+	break;
+    case 2:
+    	var dst_float64 = new Float64Array(conv)
+	    return dst_float64[0]
+	break;
+        default:
+	    return 'unknown'
+	break;
+    }
+}
 
-// [Get Version] ボタンが押されたときの処理
-// mrubycサービスのコマンド02を使う
-const version_onclick = () => {
-    cmd = [0x02]
-    // コマンドを使って値を取り出す
+// SenStickへ送る値に変換する
+// typeでデータ型を指定する
+const convert_to_senstick_value = (value) => {
+    // データ型チェック
+    var num = Number(value)
+    console.log(num)
+    var datatype = null  // nil
+    if( !Number.isNaN(num) ){
+	if( value.indexOf('.') >= 0 ){
+	    datatype = "float"
+	} else {
+	    datatype = "int"
+	}
+    }
+    // データ型ごとの値設定
+    var buffer = new ArrayBuffer(9)
+    var conv = new ArrayBuffer(8)
+    var dst_uint8 = new Uint8Array(conv)
+    switch(datatype){
+    case "int":  // int
+	var dst_int32 = new Int32Array(conv)
+	buffer[0] = 1
+	dst_int32[0] = num
+	break
+    case "float":  // float
+	var dst_float64 = new Float64Array(conv)
+	buffer[0] = 2
+	dst_float64[0] = num
+	break
+    default:
+	buffer[0] = 0
+	break
+    }
+    // データをコピー
+    for( i=0 ; i<8 ; i++ ) buffer[i+1] = dst_uint8[i]
+    return buffer
+}
+
+
+// [Read] ボタン
+const variable_read_onclick = () => {
+    var cmd = [0x10, 0x24]
+    // 変数名を格納する
+    var variable_name = document.getElementById('variable_name').value
+    var len = variable_name.length
+    if( len > 8 ) len = 8
+    for( i=0 ; i<len ; i++ ){
+	cmd.push( variable_name.charCodeAt(i) )
+    }
+    cmd.push( 0 )
+    // 値を取得する
     ble.write("mrubyc", cmd).then( () => {
-        return ble.read("mrubyc")
+	return ble.read("mrubyc")
     }).then( (data) => {
-	// コマンドを送信後のデータ取得
-        var ary = new Uint8Array(data.buffer)
-        var i = 0
-        var str = ""
-        while( i<ary.length && ary[i] != 0 ){
-            str += String.fromCharCode(ary[i])
-            i++
-        }
-	// バージョン情報をブラウザに出力する
-        document.getElementById('version_text').innerHTML = str
+	var value = convert_from_senstick_value(data.buffer)
+	document.getElementById('variable_value_get').value = value	
     })
 }
 
-
-
-// [LED Off] ボタン
-// mrubycサービスのコマンド00を使う
-const led_off_onclick = () => {
-    cmd = [0x00]
+// [Write] ボタン
+const variable_write_onclick = () => {
+    var cmd = [0x11, 0x24]
+    // 変数名を格納する
+    var variable_name = document.getElementById('variable_name').value
+    var len = variable_name.length
+    if( len > 8 ) len = 8
+    for( i=0 ; i<len ; i++ ){
+	cmd.push( variable_name.charCodeAt(i) )
+    }
+    cmd.push( 0 )
+    //
+    buffer = convert_to_senstick_value(
+	document.getElementById('variable_value_set').value
+    )
+    // 値を格納する
+    for( i=0 ; i<9 ; i++ ){
+	cmd.push( buffer[i] )
+    }
+    console.log(cmd)
+    // 書き込み
     ble.write("mrubyc", cmd)
 }
-
-// [LED On] ボタン
-// mrubycサービスのコマンド01を使う
-const led_on_onclick = () => {
-    cmd = [0x01]
-    ble.write("mrubyc", cmd)
-}
-
-
 
