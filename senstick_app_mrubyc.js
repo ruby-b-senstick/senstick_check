@@ -169,9 +169,6 @@ const transfer_onclick = () => {
     } else {
 		// 複数バイトコード
 		//　転送バイト列は、ヘッダが付加される
-	}
-	reader.readAsArrayBuffer(mrb_files[0])
-    } else {
 		var seq = 0
 		var bytecode_length = 0
 		var bytecodes = []
