@@ -114,17 +114,17 @@ const getsensor2_onclick = () => {
         //   ary[11..6]
         // x:low[7] hi[6] y:low[9] hi[8] z:low[11] hi[10]
         // 値：-2.0 ～ 2.0 
-        var vx = getInt16( ary[7] ,ary[6] ) * 2.0 / 32768.0;
-        var vy = getInt16( ary[9] ,ary[8] ) * 2.0 / 32768.0;
-        var vz = getInt16( ary[11] ,ary[10] ) * 2.0 / 32768.0;
+        var vx = getInt16( ary[6] ,ary[7] ) * 2.0 / 32768.0;
+        var vy = getInt16( ary[8] ,ary[9] ) * 2.0 / 32768.0;
+        var vz = getInt16( ary[10] ,ary[11] ) * 2.0 / 32768.0;
         document.getElementById('sensor_value_acc_text').innerHTML = "( " + vx.toFixed(4) + " , " + vy.toFixed(4) + " , " +  vz.toFixed(4) + " )"
         // 角速度(x,y,z) [度毎秒 (deg/s)]
         //   ary[17..12]
         // x:low[13] hi[12] y:low[15] hi[14] z:low[17] hi[16]
         // 値：-250.0 ～ 250.0 
-        var vx = getInt16( ary[13] ,ary[12] ) * 250.0 / 32768.0;
-        var vy = getInt16( ary[15] ,ary[14] ) * 250.0 / 32768.0;
-        var vz = getInt16( ary[17] ,ary[16] ) * 250.0 / 32768.0;
+        var vx = getInt16( ary[12] ,ary[13] ) * 250.0 / 32768.0;
+        var vy = getInt16( ary[14] ,ary[15] ) * 250.0 / 32768.0;
+        var vz = getInt16( ary[16] ,ary[17] ) * 250.0 / 32768.0;
         document.getElementById('sensor_value_gyro_text').innerHTML = "( " + vx.toFixed(3) + " , " + vy.toFixed(3) + " , " +  vz.toFixed(3) + " )"
     })
 }
