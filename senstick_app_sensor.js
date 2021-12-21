@@ -55,6 +55,17 @@ ble.onDisconnect = (deviceName) => {
 }
 
 
+// ２バイト数値を符号付数値へ変換
+const getInt16 = (low, hi) => {
+	const buf = new ArrayBuffer(2);
+	const dv = new DataView(buf);
+	dv.setUint8(0, low);
+	dv.setUint8(1, hi);
+	var v = dv.getInt16(0, true);
+	// console.log("getInt16: %d[0x%s%s]", v, hi.toString(16), low.toString(16));
+	return v;
+}
+
 // [Get Sensor Data 1] ボタンが押されたときの処理
 // mrubycサービスのコマンド 20 を使う
 const getsensor1_onclick = () => {
@@ -83,5 +94,37 @@ const getsensor1_onclick = () => {
     })
 }
 
-
+// [Get sensor values2] ボタン
+const getsensor2_onclick = () => {
+    cmd = [0x21]
+    ble.write("mrubyc", cmd).then( () => {
+        return ble.read("mrubyc")
+    }).then( (data) => {
+        const ary = new Uint8Array(data.buffer)
+        // 地磁気(x,y,z) ̟[μT]
+        //   ary[5..0]
+        // x:low[0] hi[1] y:low[2] hi[3] z:low[4] hi[5]
+        // 値：-4912 ～ 4912 
+        var vx = getInt16( ary[0] ,ary[1] ) * 4912.0 / 32768.0;
+        var vy = getInt16( ary[2] ,ary[3] ) * 4912.0 / 32768.0;
+        var vz = getInt16( ary[4] ,ary[5] ) * 4912.0 / 32768.0;
+        document.getElementById('sensor_value_magnetic_text').innerHTML = "( " + vx.toFixed(2) + " , " + vy.toFixed(2) + " , " +  vz.toFixed(2) + " )"
+        // 加速度(x,y,z) [G]
+        //   ary[11..6]
+        // x:low[7] hi[6] y:low[9] hi[8] z:low[11] hi[10]
+        // 値：-2.0 ～ 2.0 
+        var vx = getInt16( ary[7] ,ary[6] ) * 2.0 / 32768.0;
+        var vy = getInt16( ary[9] ,ary[8] ) * 2.0 / 32768.0;
+        var vz = getInt16( ary[11] ,ary[10] ) * 2.0 / 32768.0;
+        document.getElementById('sensor_value_acc_text').innerHTML = "( " + vx.toFixed(4) + " , " + vy.toFixed(4) + " , " +  vz.toFixed(4) + " )"
+        // 角速度(x,y,z) [度毎秒 (deg/s)]
+        //   ary[17..12]
+        // x:low[13] hi[12] y:low[15] hi[14] z:low[17] hi[16]
+        // 値：-250.0 ～ 250.0 
+        var vx = getInt16( ary[13] ,ary[12] ) * 250.0 / 32768.0;
+        var vy = getInt16( ary[15] ,ary[14] ) * 250.0 / 32768.0;
+        var vz = getInt16( ary[17] ,ary[16] ) * 250.0 / 32768.0;
+        document.getElementById('sensor_value_gyro_text').innerHTML = "( " + vx.toFixed(3) + " , " + vy.toFixed(3) + " , " +  vz.toFixed(3) + " )"
+    })
+}
 
