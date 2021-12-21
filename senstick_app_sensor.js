@@ -94,6 +94,7 @@ const getsensor1_onclick = () => {
     })
 }
 
+
 // [Get sensor values2] ボタン
 const getsensor2_onclick = () => {
     cmd = [0x21]
