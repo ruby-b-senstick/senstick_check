@@ -2,7 +2,7 @@
 
 ## SenStick4取扱説明書
 
-[SenStick4取扱説明書](./docs/SenStick4%20%20取扱説明書.pdf)
+[SenStick4 取扱説明書](./docs/SenStick4%20%20取扱説明書%20rev1.1.pdf)
 
 ## SenStick4チュートリアル
 
