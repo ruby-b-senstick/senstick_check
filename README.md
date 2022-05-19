@@ -65,6 +65,17 @@ SenStick4 内の mruby/c プログラムの変数にBLE経由でアクセスす�
 [senstick_app_variableを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_variable.html)
 
 
+### senstick_password_change
+
+SenStick4 の プログラム転送時に使用するパスワードを変更します。
+
+SenStick4 に mruby/c のプログラムを転送する際、パスワードが必要です。出荷時のパスワードは「senstickpass」となっています。
+このパスワードを変更することができます。
+
+[senstick_password_changeを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_password_change.html)
+
+
+
 ## お問い合わせ先
 
 [Rubyビジネス推進協議会HP「SenStick4+mruby/c教育キット」](http://senstick.ruby-b.com/)  
