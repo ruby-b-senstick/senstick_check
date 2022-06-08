@@ -126,6 +126,15 @@ const transfer_mrb16 = () => {
 	transfer_data['seq'] = -1
 	cmd = [0x07]
 	console.log('cmd 0x07')
+	// パスワードコピー
+	var my_password = document.getElementById('password').value
+	var len = my_password.length
+	if( len > 16 ) len = 16;
+	for( i=0 ; i<len ; i++ ){
+		cmd.push(my_password.charCodeAt(i));
+	}
+	cmd.push(0);  // ゼロターミネート
+	// コマンド送信
 	ble.write("mrubyc", cmd).then( () => {
 	    transferProgress( 100 )
 	})
