@@ -27,12 +27,10 @@ ble.onScan = (deviceName) => {
 
 
 // [scan & connect] ボタン
-// 接続がされると、onConnectGATT が呼ばれる
 const scan_onclick = () => {
-    ble.scan('mrubyc').then( () => {
-	document.getElementById('version_text').innerHTML = ""
+    ble.scan('mrubyc').then(() => {
         return ble.connectGATT('mrubyc')
-    }).catch( error => {
+    }).catch(error => {
         console.log('error in scan')
         this.onError(error)
     })
@@ -40,7 +38,8 @@ const scan_onclick = () => {
 
 // GATT接続した
 ble.onConnectGATT = (deviceName) => {
-    document.getElementById('device_status').innerHTML = 'Connected'}
+    document.getElementById('device_status').innerHTML = 'Connected'
+}
 
 
 // [disconnect] ボタン
@@ -59,7 +58,7 @@ ble.onDisconnect = (deviceName) => {
 // [Change password] ボタンが押されたときの処理
 // mrubycサービスのコマンド08を使う
 // コマンド08 は、 08 01 と 08 02 の２つのコマンドを連続して送信する
-const version_onclick = () => {
+const change_password_onclick = () => {
     // 現在のパスワードを送る
     cmd = [0x08, 0x01]
     var my_password = document.getElementById('cur_password').value
@@ -79,7 +78,16 @@ const version_onclick = () => {
             cmd.push(my_password.charCodeAt(i));
         }
         cmd.push(0);  // ゼロターミネート
-        ble.write('mrubyc', cmd)
+        ble.write('mrubyc', cmd).then(() => {
+            return ble.read("mrubyc")
+        }).then((data) => {
+            // console.log(data.getUint8(0))          
+            if( data.getUint8(0) == 1 ){
+                document.getElementById('change_password_result_text').innerHTML = 'パスワードを変更しました'
+            } else {
+                document.getElementById('change_password_result_text').innerHTML = 'パスワードを変更できませんでした'
+            }
+        })
     })
 }
 

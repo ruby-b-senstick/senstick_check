@@ -135,10 +135,17 @@ const transfer_mrb16 = () => {
 	}
 	cmd.push(0);  // ゼロターミネート
 	// コマンド送信
-	ble.write("mrubyc", cmd).then( () => {
-	    transferProgress( 100 )
+   	ble.write("mrubyc", cmd).then(() => {
+	   transferProgress(100)
+	   return ble.read("mrubyc")
+   	}).then((data) => {
+	   if( data.getUint8(0) == 1 ){
+		   document.getElementById('transfer_result_text').innerHTML = 'プログラムを転送しました'
+	    } else {
+		   document.getElementById('transfer_result_text').innerHTML = 'プログラムを転送できませんでした'
+		}
 	})
-    }
+	}
 }
 
 
