@@ -43,6 +43,8 @@ mrbc.exe variable.rb
 
 ブラウザで、「Variable Name:」に「`ondo`」と入力し、「Read from SenStick ->」ボタンをクリックします。
 
+- [senstick_app_variableを実行する](https://ruby-b-senstick.github.io/senstick_check/senstick_app_variable.html)
+
 ![変数の参照](./images/fig05-01.png)
 
 SenStick内のmruby/cプログラムで計測した温度がブラウザに表示されます。
